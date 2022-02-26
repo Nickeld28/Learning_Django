@@ -389,3 +389,22 @@ learning_logs. На первый взгляд такая структура ка
 ПРИМЕЧАНИЕ.
 Вы можете получить следующее сообщение об ошибке: ModuleNotFoundError: No module named 'learning_logs.urls'
 В таком случае перезапустите сервер разработки каждый раз, когда вы сталкиваетесь с подобными ошибками.
+
+Выполнил упражнение 18.5: Создал каталог meal_planner под проект, внутри него проект django.
+Создал файл .env и засекретил SECRET_KEY и DEBUG, аналогично как в предыдущих проектах.
+Создал приложение meal_plans, добавил его в settings.py и выполнил миграцию. Создал файл urls.py в meal_plans.
+Внес изменения в файл urls.py в папке meal_planner. В meal_plans создал каталог templates, а внутри создал еще
+каталог meal_plans, а в нем файл index.html. Запустил сервер, убедился в отображении домашней страницы.
+
+    Learning_Django>md meal_planner
+    Learning_Django>cd meal_planner
+    meal_planner>django-admin startproject meal_planner .
+    meal_planner>python manage.py startapp meal_plans
+    meal_planner>python manage.py migrate
+    meal_planner>cd meal_plans
+    meal_planner\meal_plans\>NUL>urls.py
+    meal_planner\meal_plans>md templates
+    meal_planner\meal_plans>cd templates
+    meal_planner\meal_plans\templates>md meal_plans
+    meal_planner\meal_plans\templates>cd meal_plans
+    meal_planner\meal_plans\templates\meal_plans>NUL>index.html
