@@ -276,3 +276,31 @@ datetime.datetime(2022, 2, 25, 21, 6, 15, 282274, tzinfo=datetime.timezone.utc)
 >>> tp.text = "Exercise_18.3 - create new topics and edit exists."  # можем внести изменения в существующую тему
 >>> tp.save()  # после внесения изменений нужно сохранить эти изменения
 >>>
+
+Выполнил упражнение 18.4: Создал новый проект, создал приложение, добавил модели, добавил приложение в settings.py,
+добавил модели на административный сайт, создал файл .env, сохранил там SECRET_KEY и DEBUG из settings.py.,
+создал суперпользователя, осуществил миграции, запустил сервер, добавил объекты для моделей Pizza и Topping.
+Запустил интерактивную оболочку и вывел полный список объектов моделей Pizza и Topping.
+
+Learning_Django>mkdir pizzeria
+Learning_Django>cd pizzeria
+Learning_Django\pizzeria>django-admin startproject pizzeria .
+Learning_Django\pizzeria>python manage.py startapp pizzas
+Learning_Django\pizzeria>python manage.py makemigrations
+Learning_Django\pizzeria>python manage.py migrate
+Learning_Django\pizzeria>python manage.py createsuperuser
+Learning_Django\pizzeria>python manage.py makemigrations pizzas
+Learning_Django\pizzeria>python manage.py migrate
+Learning_Django\pizzeria>python manage.py runserver
+Learning_Django\pizzeria>python manage.py shell
+(InteractiveConsole)
+>>> from pizzas.models import Topping, Pizza
+>>> Topping.objects.all()
+<QuerySet [<Topping: pepperoni>, <Topping: mushrooms>, <Topping: green peppers>, <Topping: fresh mozzarella>,
+<Topping: tomatoes>, <Topping: basil leaves>, <Topping: onion>, <Topping: anchovies>, <Topping: bits of tomato>,
+<Topping: cheddar>, <Topping: feta cheese>, <Topping: red onion>, <Topping: chicken>, <Topping: artichokes>,
+<Topping: goat cheese and egg>, <Topping: tomato sauce>, <Topping: olives>, <Topping: Wisconsin brick cheese>]>
+>>> Pizza.objects.all()
+<QuerySet [<Pizza: Greek Pizza>, <Pizza: Chicago Pizza>, <Pizza: Sicilian Pizza>, <Pizza: Neapolitan Pizza>,
+<Pizza: California Pizza>, <Pizza: Detroit Pizza>]>
+>>>
