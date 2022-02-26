@@ -393,8 +393,9 @@ learning_logs. На первый взгляд такая структура ка
 Выполнил упражнение 18.5: Создал каталог meal_planner под проект, внутри него проект django.
 Создал файл .env и засекретил SECRET_KEY и DEBUG, аналогично как в предыдущих проектах.
 Создал приложение meal_plans, добавил его в settings.py и выполнил миграцию. Создал файл urls.py в meal_plans.
-Внес изменения в файл urls.py в папке meal_planner. В meal_plans создал каталог templates, а внутри создал еще
-каталог meal_plans, а в нем файл index.html. Запустил сервер, убедился в отображении домашней страницы.
+Внес изменения в файл urls.py в папке meal_planner. Внес изменения в файл views.py. В meal_plans создал каталог
+templates, а внутри создал еще каталог meal_plans, а в нем файл index.html.
+Запустил сервер, убедился в отображении домашней страницы.
 
     Learning_Django>md meal_planner
     Learning_Django>cd meal_planner
@@ -408,3 +409,7 @@ learning_logs. На первый взгляд такая структура ка
     meal_planner\meal_plans\templates>md meal_plans
     meal_planner\meal_plans\templates>cd meal_plans
     meal_planner\meal_plans\templates\meal_plans>NUL>index.html
+
+Выполнил упражнение 18.6: Создал файл urls.py в pizzeria/pizzas. Внес изменения в файл urls.py в папке pizzeria.
+Внес изменения в файл views.py. В pizzas создал каталог templates, а внутри создал еще каталог pizzas,
+а в нем файл index.html. Запустил сервер, убедился в отображении домашней страницы.
