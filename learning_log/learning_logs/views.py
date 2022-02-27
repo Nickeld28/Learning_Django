@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .forms import TopicForm, EntryForm
-from .models import Topic
+from .models import Topic, Entry
 
 
 def index(request):
@@ -59,3 +59,22 @@ def new_entry(request, topic_id):
     # Вывести пустую или недействительную форму.
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
+
+
+def edit_entry(request, entry_id):
+    """ Редактирует существующую запись """
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != 'POST':
+        # Исходный запрос; форма заполняется данными текущей записи.
+        form = EntryForm(instance=entry)
+    else:
+        # Отправка данных POST; обработать данные.
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('learning_logs:topic', topic_id=topic.id)
+
+    context = {'entry': entry, 'topic': topic, 'form': form}
+    return render(request, 'learning_logs/edit_entry.html', context)
