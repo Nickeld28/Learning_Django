@@ -22,4 +22,7 @@ urlpatterns = [
     # Добавляем строку включения модуля learning_logs.urls.
     # После этого нужно создать второй файл urls.py в папке learning_logs.
     path('', include('learning_logs.urls')),
+
+    # Добавляем URL-адреса, написанные из приложения users
+    path('users/', include('users.urls')),
 ]
