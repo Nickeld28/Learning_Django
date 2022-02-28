@@ -1,0 +1,9 @@
+
+{% block content %}
+
+    <p>{{ post.title }}, {{ post.date_added }} ---> <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
+    </p>
+    <p>{{ post }}</p>
+    <p>
+
+{% endblock content %}
